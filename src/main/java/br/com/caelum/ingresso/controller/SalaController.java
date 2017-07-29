@@ -73,9 +73,7 @@ public class SalaController {
 
     @GetMapping("/admin/sala/{id}/lugares/")
     public ModelAndView listaLugares(@PathVariable("id") Integer id) {
-
         ModelAndView modelAndView = new ModelAndView("lugar/lista");
-
         Sala sala = salaDao.findOne(id);
         modelAndView.addObject("sala", sala);
 
