@@ -6,6 +6,9 @@ import java.time.Duration;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * Created by nando on 03/03/17.
@@ -17,6 +20,8 @@ public class Filme {
     @GeneratedValue
     private Integer id;
     private String nome;
+    
+    
     private Duration duracao;
     private String genero;
     private BigDecimal preco;
@@ -76,10 +81,5 @@ public class Filme {
 	public void setPreco(BigDecimal preco) {
 		this.preco = preco;
 	}
-
-	public void setDuracao(Duration duracao) {
-		this.duracao = duracao;
-	}
-    
     
 }

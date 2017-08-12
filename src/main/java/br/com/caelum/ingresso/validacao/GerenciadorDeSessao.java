@@ -16,7 +16,8 @@ public class GerenciadorDeSessao {
 	
 	public boolean cabe(final Sessao sessaoAtual){
 		Optional<Boolean> optionalCabe = sessoesDaSala.stream()
-				.map(sessaoExistente -> horarioIsValido(sessaoExistente, sessaoAtual)).reduce(Boolean::logicalAnd);
+				.map(sessaoExistente -> horarioIsValido(sessaoExistente, sessaoAtual)
+						).reduce(Boolean::logicalAnd);
 		return optionalCabe.orElse(true);
 	}
 	private boolean horarioIsValido(Sessao sessaoExistente, Sessao sessaoAtual){
